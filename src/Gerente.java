@@ -1,25 +1,24 @@
 
-public class Gerente extends Funcionario {
-	
-	private int clave;
+public class Gerente extends Funcionario implements Autenticable {
 	
 	
-	public void setClave(int clave) {
-		this.clave = clave;
-	}
-	
-    public boolean autenticar(int clave) {
-        if (this.clave == clave) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    
+	@Override
     //Sobreescritura  - overriding de metodo
     public double getBonificacion () {
     	System.out.println("EJECUTANDO DESDE GERENTE");
-    	return super.getSalario() + this.getSalario() * 0.05;
+    	return 2000;
     }
+
+	@Override
+	public void setClave(int clave) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean autenticar(int clave) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 }
