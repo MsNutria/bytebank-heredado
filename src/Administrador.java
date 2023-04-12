@@ -1,21 +1,26 @@
 
 public class Administrador extends Funcionario implements Autenticable {
 
+	private AutenticacionUtil util;
+	
+	public Administrador() {
+		this.util = new AutenticacionUtil();
+	}
+	
 	@Override
 	public double getBonificacion() {
-		return 0;
+		return this.getSalario();
 	}
 
 	@Override
 	public void setClave(int clave) {
-		// TODO Auto-generated method stub
+		this.util.setClave(clave);
 		
 	}
 
 	@Override
 	public boolean autenticar(int clave) {
-		// TODO Auto-generated method stub
-		return false;
+		return this.util.autenticar(clave);
 	}
 
 }
